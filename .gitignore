@@ -1,0 +1,8 @@
+__pycache__/
+.pytest_cache/
+.DS_Store
+.venv/
+*.pyc
+data/raw_lseg*/
+data/processed/*.csv
+

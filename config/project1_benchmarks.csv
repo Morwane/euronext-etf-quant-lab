@@ -1,0 +1,29 @@
+etf,benchmark,benchmark_name,benchmark_quality
+SPY,_SPX,S&P 500 Index,close_index_proxy
+DIA,_DJI,Dow Jones Industrial Average,close_index_proxy
+IWM,_RUT,Russell 2000 Index,close_index_proxy
+EFA,_MIEA00000PUS,MSCI EAFE Index,exact_lseg_candidate
+EEM,_MSCIEF,MSCI Emerging Markets Index,exact_lseg_candidate
+EWG,_GDAXI,DAX Germany equity index,close_country_proxy
+EWJ,_N225,Nikkei 225 Japan equity index,close_country_proxy
+EWU,_FTSE,FTSE 100 UK equity index,close_country_proxy
+EWZ,_BVSP,Bovespa Brazil equity index,close_country_proxy
+FXI,_HSI,Hang Seng Hong Kong/China proxy,proxy_not_exact
+VGK,_STOXX,STOXX 600 Europe equity index,close_region_proxy
+XLK,_SPLRCT,S&P 500 Information Technology Index,exact_lseg_candidate
+XLF,_SPSY,S&P 500 Financials Index,exact_lseg_candidate
+XLE,_SPNY,S&P 500 Energy Index,exact_lseg_candidate
+XLV,SPY,S&P 500 ETF used until sector index RIC is mapped,proxy_not_exact
+XLY,SPY,S&P 500 ETF used until sector index RIC is mapped,proxy_not_exact
+XLP,SPY,S&P 500 ETF used until sector index RIC is mapped,proxy_not_exact
+XLI,SPY,S&P 500 ETF used until sector index RIC is mapped,proxy_not_exact
+XLU,SPY,S&P 500 ETF used until sector index RIC is mapped,proxy_not_exact
+XLB,SPY,S&P 500 ETF used until sector index RIC is mapped,proxy_not_exact
+XLC,SPY,S&P 500 ETF used until sector index RIC is mapped,proxy_not_exact
+GLD,GCc1,Gold front future proxy,proxy_not_exact
+SLV,SIc1,Silver front future proxy,proxy_not_exact
+LQD,AGG,US aggregate bond ETF proxy,proxy_not_exact
+HYG,JNK,High-yield ETF peer proxy,proxy_not_exact
+JNK,HYG,High-yield ETF peer proxy,proxy_not_exact
+AGG,AGG,Self benchmark until bond index RIC is mapped,self_placeholder
+TIP,AGG,US aggregate bond ETF proxy,proxy_not_exact
