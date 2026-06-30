@@ -1,15 +1,17 @@
 # Euronext ETF Quant Lab
 
-Production-style ETF analytics project built for market-structure, ETF strategy and quant research interviews.
+ETF market-data analytics project built for market-structure, ETF strategy and quant research interviews.
 
-It uses local LSEG daily market-data caches and produces reproducible reports for the exact project themes listed on my CV:
+The main completed use case is an ETF market-quality monitor using LSEG Workspace data. It pulls ETF price, bid, ask, volume and NAV, maps ETFs to appropriate benchmarks, and produces reports/figures on:
 
-1. ETF Market-Quality & Fair-Value Analytics
-2. Simulation & Scenario Models
-3. Optimization & Segmentation
-4. Market-Data Analytics & Dashboards
-5. Quantitative Market Research
-6. Quantitative Toolkit
+- quoted bid-ask spreads;
+- premium/discount to NAV;
+- liquidity/volume;
+- tracking error versus mapped benchmarks;
+- beta, realized volatility and drawdown;
+- ETF market-quality monitoring scores.
+
+This is not a PnL trading strategy. It is an analytics and monitoring framework for ETF market quality, designed to support the CV themes: market-data dashboards, quantitative market research, scenario analysis and portfolio/risk tooling.
 
 ## Quick start
 
@@ -23,7 +25,7 @@ Generated outputs are written to `reports/` and `data/processed/`.
 
 Raw LSEG / Refinitiv data is not committed to this repository. See `DATA_LICENSE_NOTE.md`.
 
-For the ETF market-quality project:
+For the completed ETF market-quality workflow:
 
 ```bash
 python scripts/pull_project1_lseg.py --rics SPY,EFA,EEM --with-nav --out data/raw_lseg_project1_nav_core
@@ -45,9 +47,9 @@ The current local cache contains daily close-like fields (`TRDPRC_1`) for ETFs, 
 
 When those fields are absent, the report is explicit and uses price-based liquidity/stress proxies instead of pretending to have bid/ask or NAV data.
 
-## Project map to CV
+## Main Project
 
-### ETF Market-Quality & Fair-Value Analytics
+### ETF Market-Quality Analytics
 
 `scripts/run_project1_market_quality.py` computes quoted bid-ask spread, premium/discount to NAV, tracking error versus mapped LSEG benchmarks, beta, realized volatility, drawdown and market-quality risk score.
 
@@ -73,53 +75,49 @@ This is an ETF analytics and monitoring project, not a PnL trading strategy. The
 
 ![Premium discount through time](reports/figures/project1/premium_discount_timeseries.png)
 
-### Simulation & Scenario Models
+## Link To My CV
 
-`scripts/run_scenarios.py` runs block-bootstrap Monte Carlo, market stress scenarios, transaction-cost sensitivity and fee/revenue sensitivity.
-
-Output:
-
-- `reports/scenario_models_report.md`
-- `data/processed/scenario_stress_tests.csv`
-- `data/processed/fee_revenue_sensitivity.csv`
-
-### Optimization & Segmentation
-
-`scripts/run_optimization.py` builds an inverse-volatility risk-parity allocator with volatility targeting, max-weight constraints and turnover costs.
-
-Output:
-
-- `reports/optimization_segmentation_report.md`
-- `data/processed/vol_target_weights.csv`
-- `data/processed/cluster_segmentation.csv`
+This repository supports the following CV lines:
 
 ### Market-Data Analytics & Dashboards
 
-The generated CSV files are dashboard-ready snapshots: market quality, strategy weights, scenarios, cluster segmentation and research signals.
+The project ingests LSEG ETF data, computes market-quality indicators and generates automated reports and figures. The README figures are produced by `scripts/plot_project1_market_quality.py`.
 
 ### Quantitative Market Research
 
-`scripts/run_research.py` tests ETF relative-value z-scores, sector dispersion and volatility/correlation context using benchmark comparison and transaction costs.
+The research component studies ETF spreads, NAV alignment, benchmark tracking, realized volatility and cross-ETF market-quality differences. The benchmark mapping is explicit in `config/project1_benchmarks.csv`, and benchmark availability is audited through `scripts/audit_project1_benchmarks_lseg.py`.
 
-Output:
+### Simulation & Scenario Models
 
-- `reports/quant_market_research_report.md`
-- `data/processed/relative_value_zscores.csv`
-- `data/processed/sector_dispersion.csv`
+Supporting module: `scripts/run_scenarios.py` runs block-bootstrap, stress scenarios and fee/revenue sensitivity. This is useful interview material, but less central than the ETF market-quality project.
+
+### Optimization & Segmentation
+
+Supporting module: `scripts/run_optimization.py` builds a simple risk-parity / volatility-target allocation across ETF clusters with turnover costs. This demonstrates portfolio/risk tooling, not a production allocator.
 
 ### Quantitative Toolkit
 
-`src/toolkit.py` contains Black-Scholes, CRR binomial pricing and walk-forward split utilities. `tests/test_metrics.py` validates core metrics and pricing convergence.
+Supporting module: `src/toolkit.py` contains Black-Scholes, CRR binomial pricing and walk-forward split utilities, with tests in `tests/test_metrics.py`.
 
-## Interview framing
+## Interview Pitch
 
-This is not presented as a secret proprietary alpha. It is presented as an institutional-quality research and analytics framework:
+I built an ETF market-quality dashboard using LSEG Workspace data. It pulls ETF price, bid, ask, volume and NAV, maps ETFs to appropriate benchmarks such as S&P 500, MSCI EAFE and MSCI Emerging Markets, and computes spread, premium/discount to NAV, tracking error, beta, volatility and drawdown. The goal is not to generate PnL directly, but to monitor ETF trading quality and identify products that require attention.
+
+## Validation
+
+The repository is structured to be auditable rather than over-claiming alpha:
 
 - clean LSEG data ingestion
 - explicit data limitations
-- ETF market-quality analytics
-- benchmark comparison
-- no look-ahead in strategy returns
+- benchmark availability audit
+- mapped benchmark comparison
+- ETF market-quality analytics and figures
 - transaction costs
-- scenario stress testing
+- scenario stress testing support module
 - reproducible reports and tests
+
+Run:
+
+```bash
+pytest -q
+```
