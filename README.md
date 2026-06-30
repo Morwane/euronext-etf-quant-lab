@@ -1,17 +1,17 @@
 # Euronext ETF Quant Lab
 
-ETF market-data analytics project built for market-structure, ETF strategy and quant research .
+Institutional-style ETF market-quality analytics project built with Python and LSEG Workspace data.
 
-The main completed use case is an ETF market-quality monitor using LSEG Workspace data. It pulls ETF price, bid, ask, volume and NAV, maps ETFs to appropriate benchmarks, and produces reports/figures on:
+The project monitors whether ETFs trade efficiently by measuring:
 
 - quoted bid-ask spreads;
 - premium/discount to NAV;
-- liquidity/volume;
+- trading liquidity and volume;
 - tracking error versus mapped benchmarks;
 - beta, realized volatility and drawdown;
-- ETF market-quality monitoring scores.
+- ETF market-quality deterioration scores.
 
-This is not a PnL trading strategy. It is an analytics and monitoring framework for ETF market quality, designed to support the CV themes: market-data dashboards, quantitative market research, scenario analysis and portfolio/risk tooling.
+This is not a PnL trading strategy. It is a market-structure and ETF analytics framework designed for exchange / ETF strategy use cases: market-quality monitoring, member/client segmentation, fee-scenario analysis and automated reporting.
 
 ## Quick start
 
@@ -123,9 +123,7 @@ Supporting module: `scripts/run_optimization.py` builds a simple risk-parity / v
 
 Supporting module: `src/toolkit.py` contains Black-Scholes, CRR binomial pricing and walk-forward split utilities, with tests in `tests/test_metrics.py`.
 
-## Interview Pitch
 
-I built an ETF market-quality dashboard using LSEG Workspace data. It pulls ETF price, bid, ask, volume and NAV, maps ETFs to appropriate benchmarks such as S&P 500, MSCI EAFE and MSCI Emerging Markets, and computes spread, premium/discount to NAV, tracking error, beta, volatility and drawdown. The goal is not to generate PnL directly, but to monitor ETF trading quality and identify products that require attention.
 
 ## Validation
 
