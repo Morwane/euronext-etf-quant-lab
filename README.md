@@ -1,6 +1,6 @@
 # Euronext ETF Quant Lab
 
-ETF market-data analytics project built for market-structure, ETF strategy and quant research interviews.
+ETF market-data analytics project built for market-structure, ETF strategy and quant research .
 
 The main completed use case is an ETF market-quality monitor using LSEG Workspace data. It pulls ETF price, bid, ask, volume and NAV, maps ETFs to appropriate benchmarks, and produces reports/figures on:
 
