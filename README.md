@@ -75,6 +75,30 @@ This is an ETF analytics and monitoring project, not a PnL trading strategy. The
 
 ![Premium discount through time](reports/figures/project1/premium_discount_timeseries.png)
 
+## Supporting Project: Simulation & Scenario Models
+
+`scripts/run_scenarios.py` stress-tests a volatility-targeted ETF allocation using Monte Carlo, block-bootstrap, market-regime analysis, transaction-cost sensitivity and a fee/revenue sensitivity proxy.
+
+This supports the CV line:
+
+> Simulation & Scenario Models: Monte-Carlo simulation, block-bootstrap and cost/scenario sensitivity analysis across market regimes to stress-test outcomes; scenario-modelling approach used to optimize fee/revenue initiatives.
+
+Outputs:
+
+- `reports/project2_simulation_scenario_models.md`
+- `reports/figures/project2/terminal_distribution.png`
+- `reports/figures/project2/scenario_stress_summary.png`
+- `reports/figures/project2/cost_sensitivity.png`
+- `reports/figures/project2/fee_revenue_heatmap.png`
+
+The fee/revenue block is an illustrative sensitivity model, not Euronext's exact fee schedule.
+
+![Simulation distribution](reports/figures/project2/terminal_distribution.png)
+
+![Scenario stress summary](reports/figures/project2/scenario_stress_summary.png)
+
+![Fee revenue sensitivity](reports/figures/project2/fee_revenue_heatmap.png)
+
 ## Link To My CV
 
 This repository supports the following CV lines:
@@ -89,7 +113,7 @@ The research component studies ETF spreads, NAV alignment, benchmark tracking, r
 
 ### Simulation & Scenario Models
 
-Supporting module: `scripts/run_scenarios.py` runs block-bootstrap, stress scenarios and fee/revenue sensitivity. This is useful interview material, but less central than the ETF market-quality project.
+Supporting module: `scripts/run_scenarios.py` runs Monte Carlo, block-bootstrap, cost stress, regime analysis and a fee/revenue sensitivity proxy. This is useful interview material, but less central than the ETF market-quality project.
 
 ### Optimization & Segmentation
 
