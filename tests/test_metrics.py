@@ -1,8 +1,6 @@
-import numpy as np
 import pandas as pd
 
-from src.metrics import max_drawdown, sharpe
-from src.toolkit import black_scholes_price, crr_binomial_price
+from src.metrics import max_drawdown, rolling_tracking_error, sharpe
 
 
 def test_sharpe_positive_for_positive_returns():
@@ -15,8 +13,7 @@ def test_max_drawdown_is_negative_or_zero():
     assert max_drawdown(returns) <= 0
 
 
-def test_crr_converges_near_black_scholes():
-    bs = black_scholes_price(100, 100, 1.0, 0.03, 0.20, "call")
-    crr = crr_binomial_price(100, 100, 1.0, 0.03, 0.20, 300, "call")
-    assert np.isclose(bs, crr, atol=0.15)
-
+def test_tracking_error_is_zero_for_identical_returns():
+    returns = pd.Series([0.001, -0.002, 0.003] * 40)
+    te = rolling_tracking_error(returns, returns, window=20).dropna()
+    assert te.iloc[-1] == 0

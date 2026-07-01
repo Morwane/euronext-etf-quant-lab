@@ -1,2 +1,1 @@
-"""ETF market-quality and quantitative research toolkit."""
-
+"""ETF market-quality analytics for ETF quant research."""
