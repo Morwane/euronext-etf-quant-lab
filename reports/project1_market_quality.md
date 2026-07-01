@@ -15,9 +15,9 @@ Data source used: live/pulled LSEG market-quality fields.
 
 | ric   |   latest_price |   quoted_spread_bps_20d_median |   premium_discount_bps_20d_median | benchmark     | benchmark_name              | benchmark_quality    |   tracking_error_63d |   ann_vol_63d |   beta_to_benchmark |   max_drawdown_1y | has_real_spread   | has_real_nav   |   quality_risk_score |
 |:------|---------------:|-------------------------------:|----------------------------------:|:--------------|:----------------------------|:---------------------|---------------------:|--------------:|--------------------:|------------------:|:------------------|:---------------|---------------------:|
-| EEM   |        67.4300 |                         1.4723 |                           -0.4158 | _MSCIEF       | MSCI Emerging Markets Index | exact_lseg_candidate |               0.3061 |        0.3283 |              0.5418 |           -0.1352 | True              | True           |               0.9167 |
-| EFA   |       103.4500 |                         0.9706 |                            8.1248 | _MIEA00000PUS | MSCI EAFE Index             | exact_lseg_candidate |               0.1605 |        0.2026 |              0.6092 |           -0.1142 | True              | True           |               0.7500 |
-| SPY   |       741.0000 |                         0.2693 |                            0.0835 | _SPX          | S&P 500 Index               | close_index_proxy    |               0.0188 |        0.1554 |              1.0207 |           -0.0928 | True              | True           |               0.3333 |
+| EEM   |        68.4100 |                         1.4723 |                            1.6821 | _MSCIEF       | MSCI Emerging Markets Index | exact_lseg_candidate |               0.3062 |        0.3280 |              0.5428 |           -0.1352 | True              | True           |               0.9167 |
+| EFA   |       103.8800 |                         0.9706 |                            8.1248 | _MIEA00000PUS | MSCI EAFE Index             | exact_lseg_candidate |               0.1606 |        0.2008 |              0.6092 |           -0.1142 | True              | True           |               0.7500 |
+| SPY   |       746.7700 |                         0.2702 |                           -0.3856 | _SPX          | S&P 500 Index               | close_index_proxy    |               0.0188 |        0.1557 |              1.0206 |           -0.0928 | True              | True           |               0.3333 |
 
 ## How to explain it
 
